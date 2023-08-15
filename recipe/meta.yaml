@@ -1,5 +1,5 @@
 {% set name = "dtool_lookup_server_dependency_graph_plugin" %}
-{% set version = "0.1.5" %}
+{% set version = "0.2.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/dtool-lookup-server-dependency-graph-plugin/dtool-lookup-server-dependency-graph-plugin-{{ version }}.tar.gz
-  sha256: 2303707e754a46bc596b8612f20930dffd33d1af13fe935ec82e38aeddb2c45a
+  sha256: 4261e2708e44d7e224c53a8afa545ca6ecb28d9ba25019f3a8631a3897a90517
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,6 +22,7 @@ requirements:
     - setuptools_scm
   run:
     - dtool_lookup_server >=0.17.2
+    - dtool_lookup_server_direct_mongo_plugin
     - dtoolcore >=3.17.0
     - python >=3.6
 

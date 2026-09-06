@@ -28,6 +28,7 @@ requirements:
     - dtool_lookup_server_direct_mongo_plugin
     - dtoolcore >=3.17.0
     - python >=${{ python_min }}
+    - setuptools <80
 
 tests:
   - python:

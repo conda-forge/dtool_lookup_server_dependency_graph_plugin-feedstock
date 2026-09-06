@@ -22,7 +22,7 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - setuptools_scm
-    - setuptools
+    - setuptools <80
   run:
     - dtool_lookup_server >=0.17.2
     - dtool_lookup_server_direct_mongo_plugin
@@ -34,7 +34,9 @@ tests:
       imports:
         - dtool_lookup_server_dependency_graph_plugin
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: dtool lookup server plugin for querying dataset dependency graphs
